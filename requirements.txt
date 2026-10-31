@@ -1,0 +1,10 @@
+# Direct dependencies. Floors reflect versions that were importable/tested in the audit environment
+# (Flask 3.1.3, Werkzeug 3.1.7); psycopg, gunicorn and redis were NOT installed there (offline), so
+# their resolved versions are unverified. Generate a fully pinned, hashed lockfile on a networked machine:
+#   pip install pip-tools pip-audit && pip-compile --generate-hashes -o requirements.lock requirements.txt
+#   pip-audit -r requirements.lock
+Flask>=3.1.3,<4
+Werkzeug>=3.1.7,<4
+gunicorn>=23.0.0
+psycopg[binary]>=3.2,<4
+redis>=5.0,<8
